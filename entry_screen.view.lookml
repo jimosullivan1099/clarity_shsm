@@ -358,6 +358,9 @@
     label: 'Disability: Substance Abuse'
     sql: fn_getPicklistValueName('health_substance_abuse',${TABLE}.health_substance_abuse)
     
+  - dimension: disability_mental_or_substance  
+    sql: ${health_substance_abuse} <> 'No' Or ${health_mental} = 1
+    
   - dimension: health_substance_abuse_services
     label: 'Disability: Substance Abuse Services'
     type: int
